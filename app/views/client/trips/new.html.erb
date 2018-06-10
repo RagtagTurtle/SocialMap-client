@@ -1,0 +1,15 @@
+<form action="/client/trips" method="post">
+  <%=  form_tag "/client/trips", method: :post do%>
+  <div>
+    Climate: <input type="integer" name="climate">  
+  </div>
+  <div>
+    Start Date: <input type="text" name="start_date">  
+  </div>
+  <div>
+    End Date: <input type="text" name="end_date">  
+  </div>
+
+  <input type="submit" value="Create Trip">
+</form>
+<% end %>

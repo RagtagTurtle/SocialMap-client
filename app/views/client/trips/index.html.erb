@@ -1,0 +1,6 @@
+<% @trips.each do |trip|  %>
+  <h2>User: <%= trip["user"] %></h2>
+  <h3>Climate: <%= trip["climate"] %></h3>
+  <h5>Start Date: <%= trip["start_date"] %></h5>
+  <h5>End Date: <%= trip["end_date"] %></h5>
+<% end  %>

@@ -28,5 +28,31 @@ Rails.application.routes.draw do
     get '/cities/new' => 'cities#new'
     post '/cities' => 'cities#create'
     get '/cities/:id' => 'cities#show'
+    get '/cities/:id/edit' => 'cities#edit'
+    patch '/cities/:id' => 'cities#update'
+    delete '/cities/:id' => 'cities#destroy'
+
+    get '/recommendations' => 'recommendations#index'
+    get '/recommendations/new' => 'recommendations#new'
+    post '/recommendations' => 'recommendations#create'
+    get '/recommendations/:id' => 'recommendations#show'
+    get '/recommendations/:id/edit' => 'recommendations#edit'
+    patch '/recommendations/:id' => 'recommendations#update'
+    delete '/recommendations/:id' => 'recommendations#destroy'
+
+    get '/vibes' => 'vibes#index'
+    get '/vibes/new' => 'vibes#new'
+    post '/vibes' => 'vibes#create'
+    get '/vibes/:id' => 'vibes#show'
+    get '/vibes/:id/edit' => 'vibes#edit'
+    patch '/vibes/:id' => 'vibes#update'
+    delete '/vibes/:id' => 'vibes#destroy'
+
+    get '/trip_vibes' => 'trip_vibes#index'
+    get '/trip_vibes/new' => 'trip_vibes#new'
+    post '/trip_vibes' => 'trip_vibes#create'
+    get 'trip_vibes/:id' => 'trip_vibes#show'
+    get '/trip_vibes/:id/edit' => 'trip_vibes#edit'
+    patch '/trip_vibes/:id' => 'trip_vibes#update'
   end
 end

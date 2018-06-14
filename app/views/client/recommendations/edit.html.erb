@@ -1,0 +1,25 @@
+<% if @errors  %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end  %>
+
+<%= form_tag "/client/recommendations/#{ @recommendation['id']}", method: :patch do %>
+<div>
+  Category: <input type="integer" name="category" value="<%= @recommendation["category"] %>">
+</div>
+<div>
+  Name: <input type="text" name="name" value="<%= @recommendation["name"] %>">
+</div>
+<div>
+  Trip ID: <input type="integer" name="trip_id" value="<%= @recommendation["trip_id"] %>">
+</div>
+<div>
+  City ID: <input type="integer" name="city_id"value="<%= @recommendation["city_id"] %>"> 
+</div>
+
+<input type="submit" value="Update Recommendation">
+
+<% end  %>

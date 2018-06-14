@@ -1,0 +1,7 @@
+<% @recommendations.each do |recommendation| %>
+  <h5>Recommendation ID: <%= recommendation["id"] %></h5>
+  <h2> <%= recommendation["name"] %></h2>
+  <h3>Category: <%= recommendation["category"] %></h3>
+  <h4>Trip: <%= recommendation["trip_id"] %></h4>
+  <h3>City: <%= recommendation["city_id"] %> </h3>
+<% end  %>

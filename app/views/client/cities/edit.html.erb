@@ -1,0 +1,24 @@
+<% if @errors  %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end  %>
+
+<%= form_tag "/client/cities/#{ @city['id']}", method: :patch do %>
+  <div>
+    City Name: <input type="text" name="name" value="<%= @city["name"] %>">
+  </div>
+  <div>
+    State: <input type="text" name="state" value="<%= @city["state"] %>">
+  </div>
+  <div>
+    Geography ID: <input type="integer" name="geography_id" value="<%= @city["geography_id"] %>">
+  </div>
+  <div>
+    Region: <input type="text" name="region" value="<%= @city["region"] %>">
+  </div>
+
+  <input type="submit" value="Update City">
+<% end %>

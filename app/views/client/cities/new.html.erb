@@ -1,3 +1,11 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <form action="/client/cities" method="post">
 <%= form_tag "/client/cities", method: :post do %>  
   <div>

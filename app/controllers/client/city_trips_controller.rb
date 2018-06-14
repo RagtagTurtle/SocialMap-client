@@ -60,10 +60,10 @@ class Client::CityTripsController < ApplicationController
                               parameters: @city_trip
                             )
     if response.code == 200
-      flash[:success] = "Successfully Updated Trip."
-      redirect_to "/client/trips/#{params[:id]}"
+      flash[:success] = "Successfully Updated City Trip."
+      redirect_to "/client/city_trips/#{params[:id]}"
     elsif response.code == 401
-      flash[:warning] = "You are not authorized to update trips."
+      flash[:warning] = "You are not authorized to update city trips."
       redirect_to "/"
     else
       @errors = response.body['errors']
@@ -75,10 +75,10 @@ class Client::CityTripsController < ApplicationController
     city_trip_id = params[:id]
     response = Unirest.delete("http://localhost:3000/api/city_trips/#{city_trip_id}")
     if response.code == 200
-      flash[:success] = "Successfully Deleted Trip"
+      flash[:success] = "Successfully Deleted City Trip"
       redirect_to "/"
     else
-      flash[:warning] = "You are not authorized to delete this trip"
+      flash[:warning] = "You are not authorized to delete this city trip"
       redirect_to "/"
     end
   end

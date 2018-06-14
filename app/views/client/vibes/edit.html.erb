@@ -1,0 +1,16 @@
+<% if @errors  %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end  %>
+
+<%=  form_tag "/client/vibes/#{ @vibe['id'] }", method: :patch do%>
+  <div>
+    Name: <input type="text" name="name">  
+  </div>
+
+  <input type="submit" value="Update Vibe">
+</form>
+<% end %>

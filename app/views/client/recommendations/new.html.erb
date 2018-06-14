@@ -1,0 +1,26 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/client/recommendations" method="post">
+  <%= form_tag "/client/recommendations", method: :post do %>
+    <div>
+      Category: <input type="integer" name="category">
+    </div>
+    <div>
+      Name: <input type="text" name="name">
+    </div>
+    <div>
+      Trip ID: <input type="integer" name="trip_id">
+    </div>
+    <div>
+      City ID: <input type="integer" name="city_id"> 
+    </div>
+    
+    <input type="submit" value="Create Recommendation">
+</form>
+<% end  %>

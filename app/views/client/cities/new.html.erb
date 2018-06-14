@@ -1,0 +1,19 @@
+<form action="/client/cities" method="post">
+<%= form_tag "/client/cities", method: :post do %>  
+  <div>
+    City Name: <input type="text" name="name">
+  </div>
+  <div>
+    State: <input type="text" name="state">
+  </div>
+  <div>
+    Geography ID: <input type="integer" name="geography_id">
+  </div>
+  <div>
+    Region: <input type="text" name="region">
+  </div>
+
+  <input type="submit" value="Create City">
+
+</form>
+<% end  %>

@@ -1,0 +1,18 @@
+<% if @errors  %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end  %>
+
+<%= form_tag "/client/city_trips/#{ @city_trip['id'] }", method: :patch do %>
+  <div>
+    City ID: <input type="integer" name="city_id" value="<%= @city_trip["city_id"] %>">  
+  </div>
+  <div>
+    TripID: <input type="integer" name="trip_id" value="<%= @city_trip["trip_id"] %>">  
+  </div>
+
+  <input type="submit" value = "Update City Trip">
+<% end %>

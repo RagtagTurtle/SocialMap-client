@@ -1,0 +1,20 @@
+<% if @errors  %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end  %>
+
+<%= form_tag "/client/trips/#{ @trip['id'] }", method: :patch do %>
+<div>
+  Climate: <input type="integer" name="climate" value="<%= @trip["climate"] %>">  
+</div>
+<div>
+  Start Date: <input type="text" name="start_date" value="<%= @trip["start_date"] %>">  
+</div>
+<div>
+  End Date: <input type="text" name="end_date" value="<%= @trip["end_date"] %>">  
+</div>
+  <input type="submit" value="Update Trip">
+<% end %>

@@ -1,0 +1,12 @@
+<form action="/client/city_trips" method="post">
+  <%=  form_tag "/client/city_trips", method: :post do%>
+  <div>
+    City ID: <input type="integer" name="city_id">  
+  </div>
+  <div>
+    TripID: <input type="integer" name="trip_id">  
+  </div>
+
+  <input type="submit" value="Create City Trip">
+</form>
+<% end %>

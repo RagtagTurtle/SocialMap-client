@@ -1,0 +1,6 @@
+<% @city_trips.each do |city_trip|  %>
+  <h2>City ID: <%= city_trip["city_id"] %></h2>
+  <h3>Trip ID: <%= city_trip["trip_id"] %></h3>
+  <h5>City: <%= city_trip["city"]["name"] %></h5>
+  <h5>State: <%= city_trip["city"]["state"] %></h5>
+<% end  %>

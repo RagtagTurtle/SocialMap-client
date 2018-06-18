@@ -18,6 +18,8 @@ class Client::TripsController < ApplicationController
 
   def create
     @trip = {
+              'city' => params[:cities],
+              'state' => params[:state],
               'climate' => params[:climate],
               'start_date' => params[:start_date],
               'end_date' => params[:end_date]

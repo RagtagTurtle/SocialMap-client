@@ -1,7 +1,41 @@
 <% @trips.each do |trip|  %>
   <h6>User: <%= trip["user"] %></h6>
-  <h2><%= trip["cities"][0]["name"] %>, <%= trip["cities"][0]["state"] %></h2>
+  <h2><%= trip["city_trips"][0]["city"]["name"] %>, <%= trip["city_trips"][0]["city"]["state"] %></h2>
   <h3>Climate: <%= trip["climate"] %></h3>
   <h5>Start Date: <%= trip["start_date"] %></h5>
   <h5>End Date: <%= trip["end_date"] %></h5>
+  
+
+<% if trip['recommendations'] %>  
+    <h3>Recommendations: </h3>
+    <ul>
+      <% trip['recommendations'].each do |recommendation|  %>
+        <li>
+         <%= recommendation['name'] %>
+        </li>
+      <% end %>
+    </ul>
+<% end %>
+
+  <h3>Vibes:</h3>
+  <ul>
+    <% trip["trip_vibes"].each do |vibe| %>
+    <li>
+      <%= vibe["vibe"]["name"] %>
+    </li>
+    <% end %>
+  </ul>
+
+  <h3>Activities:</h3>
+  <ul>
+    <% trip["trip_activities"].each do |activity|  %>
+    <li>
+      <%= activity["activity"]["name"]  %>
+    </li>
+    <%end  %>
+  </ul>
+
 <% end  %>
+
+
+

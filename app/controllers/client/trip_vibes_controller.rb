@@ -57,7 +57,7 @@ class Client::TripVibesController < ApplicationController
                   }
     response = Unirest.patch(
                               "http://localhost:3000/api/trip_vibes/#{params[:id]}",
-                              parameters: @trip_vibes
+                              parameters: @trip_vibe
                               )
     if response.code == 200
       flash[:success] = "Successfully Updated Trip Vibe."

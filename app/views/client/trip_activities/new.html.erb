@@ -1,0 +1,19 @@
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/client/trip_activities method="post>
+  <%= form_tag "/client/trip_activities", method: :post do %>
+  <div>
+    Trip ID: <input type="integer" name="trip_id">
+  </div>
+  <div>
+    Activity ID: <input type="integer" name="activity_id">
+  </div>
+  <input type="submit" value="Create Trip Activity">
+</form>
+<% end  %>
